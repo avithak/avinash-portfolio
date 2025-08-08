@@ -1,0 +1,336 @@
+/*
+ * Stylesheet for Avinash Thakur's professional portfolio.
+ *
+ * This file defines a harmonious colour palette and typography settings
+ * to create a classic yet modern feel. Sections are spaced generously,
+ * navigation is fixed for quick access, and responsive rules ensure
+ * usability on both large and small devices.
+ */
+
+/* Colour variables */
+:root {
+  --color-primary: #0a192f;      /* deep navy background for hero and dark sections */
+  --color-secondary: #112d4e;    /* secondary dark blue */
+  --color-accent: #3f72af;       /* subtle blue accent */
+  --color-gold: #c19a6b;         /* classic gold accent for highlights */
+  --color-light: #f7f8fc;        /* light background for contrast */
+  --color-dark: #0a192f;         /* dark text colour */
+  --color-text-light: #e5e9f0;   /* light text for dark backgrounds */
+  --color-text-dark: #1f3a60;    /* dark text for light backgrounds */
+  --font-family-base: 'Arial', sans-serif;
+}
+
+/* Reset and base typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: var(--color-dark);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 25, 47, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-light);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-gold);
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('059219ee-691e-4ec8-ac8b-caf8447f5227.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.hero .cta-button {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+  background-color: var(--color-gold);
+}
+
+/* Section layout */
+section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  /* Offset fixed navigation when using anchor links */
+  scroll-margin-top: 80px;
+}
+
+section.dark {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+section.dark h2 {
+  color: var(--color-gold);
+}
+
+/* About section */
+.about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Experience section */
+.experience-item {
+  margin-bottom: 2rem;
+}
+
+.experience-item h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+}
+
+.experience-item .role {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.experience-item .dates {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.experience-item ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.experience-item ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Projects section */
+.project-item {
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+.project-item h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  color: var(--color-dark);
+}
+
+.project-item p {
+  margin-bottom: 0.5rem;
+}
+
+/* Skills section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-category {
+  flex: 1 1 250px;
+  background-color: var(--color-light);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.skill-category h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-category ul li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.75rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.skill-category ul li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+
+/* Education section */
+.education-item {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.education-item h4 {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  margin-bottom: 0.25rem;
+}
+
+.education-item span {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+
+/* Contact section */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-details a {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.contact-details a:hover {
+  color: var(--color-gold);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+}
