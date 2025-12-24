@@ -141,11 +141,16 @@ const education = [
 ];
 
 // Components
-function NavBar() {
+function NavBar({ onToggleTheme }) {
   return (
     <nav>
       <div className="container">
-        <div className="logo">Avinash Thakur</div>
+        <div className="logo">
+          <a href="#home" className="logo-link">
+            <span className="logo-text">AT</span>
+            <span className="logo-name">Avinash Thakur</span>
+          </a>
+        </div>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -155,6 +160,15 @@ function NavBar() {
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="Resume/Avinash_Thakur_Resume.pdf" className="resume-btn" download>
+          Resume
+        </a>
+        <div className="theme-toggle">
+          <button id="theme-toggle" className="theme-btn" aria-label="Toggle theme" onClick={onToggleTheme}>
+            <i className="fas fa-moon"></i>
+            <i className="fas fa-sun"></i>
+          </button>
+        </div>
       </div>
     </nav>
   );
@@ -305,9 +319,24 @@ function Footer() {
 }
 
 function App() {
+  // Initialize theme from localStorage on mount
+  React.useEffect(() => {
+    const html = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+  }, []);
+
+  const handleToggleTheme = () => {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  };
+
   return (
     <>
-      <NavBar />
+      <NavBar onToggleTheme={handleToggleTheme} />
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
