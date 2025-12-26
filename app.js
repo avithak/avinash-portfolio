@@ -196,7 +196,7 @@ function HeroSection() {
     <section id="home" className="hero">
       <div className="hero-inner">
         <img
-          src="Pictures/Avinash_photo.jpg"
+          src="pictures/Avinash_photo.jpg"
           alt="Avinash Thakur"
           className="hero-photo"
         />
