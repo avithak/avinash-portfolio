@@ -142,6 +142,18 @@ const education = [
 
 // Components
 function NavBar({ onToggleTheme }) {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  React.useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 768) setMenuOpen(false);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   return (
     <nav>
       <div className="container">
@@ -151,14 +163,14 @@ function NavBar({ onToggleTheme }) {
             <span className="logo-name">Avinash Thakur</span>
           </a>
         </div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul className={menuOpen ? 'active' : ''}>
+          <li><a href="#home" onClick={closeMenu}>Home</a></li>
+          <li><a href="#about" onClick={closeMenu}>About</a></li>
+          <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
+          <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+          <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
+          <li><a href="#education" onClick={closeMenu}>Education</a></li>
+          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
         </ul>
         <a href="Resume/Avinash_Thakur_Resume.pdf" className="resume-btn" download>
           Resume
@@ -169,6 +181,11 @@ function NavBar({ onToggleTheme }) {
             <i className="fas fa-sun"></i>
           </button>
         </div>
+        <button className={menuOpen ? 'hamburger active' : 'hamburger'} aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   );
