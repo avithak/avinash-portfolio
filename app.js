@@ -194,16 +194,23 @@ function NavBar({ onToggleTheme }) {
 function HeroSection() {
   return (
     <section id="home" className="hero">
-      <div className="hero-content">
-        <h1>Avinash Thakur</h1>
-        <h2>Data Science Specialist | Generative AI & Machine Learning</h2>
-        <p>
-          Dedicated and experienced professional with over 8 years of expertise
-          in Generative AI, Machine Learning, and Natural Language Processing
-          seeking opportunities to leverage skills in solving complex problems
-          and contributing to innovative projects in AI-driven environments.
-        </p>
-        <a href="#contact" className="cta-button">Get in Touch</a>
+      <div className="hero-inner">
+        <img
+          src="Pictures/Avinash_photo.jpg"
+          alt="Avinash Thakur"
+          className="hero-photo"
+        />
+        <div className="hero-content">
+          <h1>Avinash Thakur</h1>
+          <h2>Data Science Specialist | Generative AI & Machine Learning</h2>
+          <p>
+            Dedicated and experienced professional with over 8 years of expertise
+            in Generative AI, Machine Learning, and Natural Language Processing
+            seeking opportunities to leverage skills in solving complex problems
+            and contributing to innovative projects in AI-driven environments.
+          </p>
+          <a href="#contact" className="cta-button">Get in Touch</a>
+        </div>
       </div>
     </section>
   );
