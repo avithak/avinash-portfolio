@@ -1,62 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avinash Thakur | Data Science Specialist</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Link to the stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Root element for React -->
-    <div id="root"></div>
 
-    <!-- Theme Toggle and Navigation Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        const themeIcon = themeToggle.querySelector('i');
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avinash Thakur | GenAI & Data Science Specialist</title>
+  <meta name="description" content="Portfolio of Avinash Thakur, a Senior Data Science & GenAI Specialist." />
 
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+    rel="stylesheet">
 
-        // Update icon based on current theme
-        updateThemeIcon(currentTheme);
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        themeToggle.addEventListener('click', function() {
-          const currentTheme = html.getAttribute('data-theme');
-          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-          html.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
+<body>
+  <div id="root"></div>
 
-        function updateThemeIcon(theme) {
-          if (theme === 'dark') {
-            themeIcon.className = 'fas fa-sun';
-          } else {
-            themeIcon.className = 'fas fa-moon';
-          }
-        }
-      });
-    </script>
+  <!-- React Dependencies -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- React and ReactDOM libraries -->
-    <script src="react.production.min.js"></script>
-    <script src="react-dom.production.min.js"></script>
-    <!-- Babel for JSX transformation -->
-    <script src="babel.min.js"></script>
-    <!-- Application code written in JSX -->
-    <script type="text/babel" src="app.js"></script>
-  </body>
+  <!-- Main Application -->
+  <script type="text/babel">
+    const experiences = [
+      {
+        role: 'Data Science Specialist',
+        company: 'LTIMindtree',
+        location: 'India',
+        dates: 'Oct 2024 – Present',
+        responsibilities: [
+          'Architecting advanced Agentic AI systems & RAG frameworks.',
+          'Core contributor to CanvasAI: A framework for LangGraph agents.',
+          'Designed modular components for ReAct, Supervisor, and Network agents.',
+          'Enabled seamless multi-LLM integration for enhanced reasoning.',
+        ],
+      },
+      {
+        role: 'Senior Software Developer',
+        company: 'Firstsource Solutions',
+        location: 'Hyderabad, India',
+        dates: 'Dec 2021 – Oct 2024',
+        responsibilities: [
+          'Led GenAI Entity Extractor service using RAG & LangChain on Azure.',
+          'Built scalable Azure infrastructure for cognitive search services.',
+          'Developed GenAI Email Automation for intelligent client replies.',
+          'Implemented semantic search over large document corpora.',
+        ],
+      },
+      {
+        role: 'Associate',
+        company: 'Cognizant',
+        location: 'Hyderabad, India',
+        dates: 'Nov 2017 – Dec 2021',
+        responsibilities: [
+          'Built custom NER pipelines using Flair, spaCy, and Rasa.',
+          'Created NLP solutions for intent extraction from emails.',
+          'Developed image processing utilities for form data extraction.',
+          'Automated AWS infrastructure for RPA tool deployment.',
+        ],
+      },
+    ];
+
+    const projects = [
+      {
+        name: 'CanvasAI Framework',
+        description: 'A powerful framework for creating LangGraph-based agents. Supports multi-agent orchestration, ReAct patterns, and plug-and-play LLM providers.',
+        tech: ['Python', 'LangGraph', 'GenAI'],
+        link: '#'
+      },
+      {
+        name: 'GenAI Entity Extractor',
+        description: 'Enterprise-grade service extracting entities from unstructured text using RAG. Deployed on Azure with robust API integration.',
+        tech: ['LangChain', 'Azure', 'RAG'],
+        link: '#'
+      },
+      {
+        name: 'Cognitive Search Engine',
+        description: 'Advanced search system leveraging Generative AI for semantic understanding over massive document datasets.',
+        tech: ['Azure Cognitive Search', 'OpenAI'],
+        link: '#'
+      },
+      {
+        name: 'Smart Email Automator',
+        description: 'AI system that analyzes incoming client emails and drafts intelligent, context-aware responses automatically.',
+        tech: ['AWS', 'NLP', 'Python'],
+        link: '#'
+      },
+      {
+        name: 'Custom NER Tool',
+        description: 'Annotation platform allowing users to label data and train custom Named Entity Recognition models.',
+        tech: ['Flask', 'spaCy', 'React'],
+        link: '#'
+      }
+    ];
+
+    const skills = [
+      { category: 'GenAI & LLMs', items: ['LangChain', 'LangGraph', 'RAG', 'Prompt Eng', 'Agents'] },
+      { category: 'Languages', items: ['Python', 'SQL', 'JavaScript', 'Shell', 'PowerShell'] },
+      { category: 'Cloud & DevOps', items: ['Azure', 'AWS', 'Docker', 'Git', 'CI/CD'] },
+      { category: 'Data Science', items: ['Pandas', 'NumPy', 'Scikit-learn', 'NLP', 'Computer Vision'] },
+      { category: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Vector DBs', 'MySQL'] },
+    ];
+
+    // --- Components ---
+
+    function NavBar({ theme, toggleTheme }) {
+      const [isOpen, setIsOpen] = React.useState(false);
+
+      return (
+        <nav className="navbar">
+          <div className="container nav-container">
+            <div className="logo">
+              Avinash Thakur
+            </div>
+
+            <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none' }}>
+              {/* Simplified for desktop first, mobile logic handled via CSS media query usually but let's keep it clean */}
+              <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
+            </button>
+
+            <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Work</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                  {theme === 'light' ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      );
+    }
+
+    function HeroSection() {
+      return (
+        <section id="home" className="hero">
+          <div className="container hero-wrapper">
+            <div className="hero-content">
+              <span className="eyebrow">Data Science & GenAI Specialist</span>
+              <h1>Transforming Data into <span style={{ color: 'var(--primary)' }}>Intelligent Action.</span></h1>
+              <p style={{ margin: '1.5rem 0', fontSize: '1.1rem', color: 'var(--text-muted)' }}>
+                I architect advanced Agentic AI systems and scalable RAG frameworks that solve real-world problems.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <a href="#projects" className="btn btn-primary">View Projects</a>
+                <a href="#contact" className="btn btn-outline">Contact Me</a>
+              </div>
+            </div>
+            <div className="hero-photo-container">
+              <div className="hero-blob"></div>
+              <img src="pictures/Avinash_photo.jpg" alt="Avinash Thakur" className="hero-photo" />
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function AboutSection() {
+      return (
+        <section id="about">
+          <div className="container">
+            <h2 className="section-title">About Me</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
+              <div className="glass-card" style={{ padding: '2rem' }}>
+                <p style={{ marginBottom: '1rem', color: 'var(--text-muted)' }}>
+                  Hello! I'm Avinash, an experienced Data Science Specialist with a deep passion for <strong>Generative AI</strong> and <strong>Machine Learning</strong>.
+                  I specialize in building accessible, inclusive, and performant AI products.
+                </p>
+                <p style={{ color: 'var(--text-muted)' }}>
+                  My journey has taken me from building custom NER pipelines to architecting large-scale Agentic workflows at companies like
+                  <strong> LTIMindtree</strong> and <strong>Firstsource</strong>. I thrive at the intersection of complex data challenges and elegant engineering solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function ExperienceSection() {
+      return (
+        <section id="experience">
+          <div className="container">
+            <h2 className="section-title">Experience</h2>
+            <div className="timeline">
+              {experiences.map((exp, i) => (
+                <div className="timeline-item" key={i}>
+                  <div className="timeline-dot"></div>
+                  <span className="timeline-date">{exp.dates}</span>
+                  <h3 className="timeline-role">{exp.role}</h3>
+                  <span className="timeline-company">{exp.company}, {exp.location}</span>
+                  <ul className="timeline-list">
+                    {exp.responsibilities.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function ProjectsSection() {
+      return (
+        <section id="projects">
+          <div className="container">
+            <h2 className="section-title">Featured Work</h2>
+            <div className="grid-container">
+              {projects.map((project, i) => (
+                <div className="glass-card project-card" key={i}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', color: 'var(--primary)' }}>
+                    <i className="far fa-folder" style={{ fontSize: '2rem' }}></i>
+                    <div style={{ fontSize: '1.2rem', display: 'flex', gap: '10px' }}>
+                      <a href={project.link}><i className="fab fa-github"></i></a>
+                      <a href={project.link}><i className="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                  <h3 style={{ marginBottom: '0.5rem' }}>{project.name}</h3>
+                  <p style={{ marginBottom: '1rem', flex: 1, color: 'var(--text-muted)', fontSize: '0.95rem' }}>{project.description}</p>
+                  <div>
+                    {project.tech.map((t, k) => <span key={k} className="skill-pill" style={{ marginLeft: 0, marginRight: '0.5rem' }}>{t}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function SkillsSection() {
+      return (
+        <section id="skills">
+          <div className="container">
+            <h2 className="section-title">Technical Skills</h2>
+            <div className="grid-container">
+              {skills.map((skill, i) => (
+                <div className="glass-card skill-card" key={i}>
+                  <h4 style={{ marginBottom: '1rem', color: 'var(--accent)' }}>{skill.category}</h4>
+                  <div>
+                    {skill.items.map((item, j) => (
+                      <span className="skill-pill" key={j}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function ContactSection() {
+      return (
+        <section id="contact" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
+          <div className="container">
+            <h2 style={{ marginBottom: '1rem' }}>Let's Work Together</h2>
+            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            </p>
+            <a href="mailto:avinashthakur737493@gmail.com" className="btn btn-primary">Say Hello</a>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer>
+          <div className="container">
+            <p>© {new Date().getFullYear()} Avinash Thakur. All rights reserved.</p>
+            <div style={{ marginTop: '0.5rem' }}>
+              <a href="https://linkedin.com/in/avinash-kumar-thakur" target="_blank" style={{ color: 'var(--text-dim)', margin: '0 0.5rem' }}><i className="fab fa-linkedin"></i></a>
+              <a href="#" style={{ color: 'var(--text-dim)', margin: '0 0.5rem' }}><i className="fab fa-github"></i></a>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      const [theme, setTheme] = React.useState('light');
+
+      React.useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }, []);
+
+      const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+      };
+
+      return (
+        <>
+          <NavBar theme={theme} toggleTheme={toggleTheme} />
+          <HeroSection />
+          <AboutSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ContactSection />
+          <Footer />
+        </>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+
 </html>
